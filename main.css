@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 1000px;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.div {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+   
+    
+
+    background-repeat: no-repeat;
+    background-color: aqua;
+    position: absolute; /* Added this to enable top/left animation */
+   animation: move 3s linear ;
+   animation-fill-mode: forwards;
+   animation-iteration-count: infinite;
+   animation-timing-function: cubic-bezier(.29,.89,.57,.35);
+   animation-direction: alternate;
+    
+}
+img{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio: 3/2; */
+   
+    filter: drop-shadow(52px 15px 40px rgba(0, 0, 0, 0.4));
+    border-radius: 100%;
+}
+
+@keyframes move {
+   0%{
+    top: 0;
+    left: 0;
+    background-color: aqua;
+    filter: drop-shadow(52px 15px 40px rgba(0, 0, 0, 0.4));
+   }
+   50%{
+    left: 70%;
+    top: 0;
+    background-color: bisque;
+    filter: drop-shadow(52px 15px 40px rgba(185, 68, 68, 0.821));
+
+   }
+   75%{
+    top: 50%;
+    left: 70%;
+    background-color: brown;
+    filter: drop-shadow(52px 15px 40px rgba(72, 40, 186, 0.866));
+   }
+  
+   80%{
+    top: 50%;
+    left: 0%;
+    filter: drop-shadow(52px 15px 40px rgba(164, 24, 24, 0.709));
+   
+    background-color: rgb(52, 165, 42);
+
+   }
+   100%{
+    top: 0%;
+    left: 0%;
+    filter: drop-shadow(52px 15px 40px rgba(10, 136, 92, 0.727));
+    background-color: rgb(52, 165, 42);
+   }
+
+   
+
+}
+
+h1{
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+   
+
+}
+
+h1::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    /* animation: slide 2s ease-in ; */
+
+}
+h1:hover{
+    color: aqua;
+    transition: 1s;
+
+}
+
+h1:hover::after{
+    animation: slide 2s ease-in ;
+    
+}
+
+@keyframes slide {
+    0%{
+        width: 0%;
+        left: 0%;
+        color: aqua;
+
+    }
+    50%{
+        width: 100%;
+        left: 0;
+        color: aqua;
+
+    }
+    100%{
+        width: 0;
+        left: 100%;
+        color: aqua;
+
+    }
+}
+
+
+h2{
+    font-size: 80px;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    /* z-index: 999; */
+    transform: translate(-50,0%);
+
+   
+}
+
+h2::before{
+    content: "barak butt";
+    position: absolute;
+    left: 0%;
+    top: -10px;
+    z-index: -1;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(109, 109, 109);
+    color: transparent;
+}
